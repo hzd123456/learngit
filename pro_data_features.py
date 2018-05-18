@@ -193,14 +193,7 @@ def train_classify(train_data,test_data):
     model_lgb.fit(x_train, y_train)
     y_pred_xgb = model_lgb.predict(x_test)
     #。。。。。。。。。。
-    #import xgboost as xgb
-    #dtrain = xgb.DMatrix(x_train, label=y_train,missing = -1)
-    #dtest = xgb.DMatrix(x_test)
-    #param = {'max_depth':4, 'eta':0.6,'objective':'multi:softmax','num_class':2,'min_child_weight':1,'lambda':1}
-   # param = {'max_depth':4, 'eta':0.6,'objective':'binary:logistic','silent':1,'colsample_bytree':0.2319,'scale_pos_weights':5,'seed':8,'subsample':0.8,'min_child_weight':1,'lambda':1}
-   # num_round = 60
-   # bst = xgb.train(param, dtrain, num_round)
-   # y_pred_xgb=pd.Series(bst.predict(dtest))
+    
    
     test_file["Pred"] = y_pred_xgb
     
@@ -244,11 +237,7 @@ def train_lr(train_data,test_data,train_regress):
     
     y_train = train_regress[:,-2]
     
-    #x_test_1  = test_data_1[:,:-2]
-    #x_test_1 = feature_creat(x_test_1)
-    
-    #x_test_0  = test_data_0[:,:-2]
-    #x_test_0 = feature_creat(x_test_0)
+   
     
     from sklearn import linear_model
     reg = linear_model.Lasso(alpha = 0.1)
@@ -260,17 +249,7 @@ def train_lr(train_data,test_data,train_regress):
    
 
    
-    #x_train = feature_creat(x_train)
-    #x_test = feature_creat(x_test)
-    #import xgboost as xgb
-    #dtrain= xgb.DMatrix(x_train, label=y_train,missing = 0)
-    #dtest_1 = xgb.DMatrix(x_test_1)
-    #dtest_0 = xgb.DMatrix(x_test_0)
-    #param = {'max_depth':4, 'eta':0.05,'min_child_weight':1,'lambda':1}
-    #num_round = 1000
-    #bst = xgb.train(param, dtrain, num_round)
-    #y_pre_xgb_1 = pd.Series(bst.predict(dtest_1)*y_std+y_mean)
-    #y_pre_xgb_0 = pd.Series(bst.predict(dtest_0)*y_std+y_mean)
+   
     
     test_file_1["Pred"] = y_pre_xgb_1
     pre_0_max = y_pre_xgb_0.max()
