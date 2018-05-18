@@ -256,13 +256,7 @@ def train_lr(train_data,test_data,train_regress):
     y_pre_xgb_1 = pd.Series(reg.predict(x_test_1)*y_std+y_mean)
     y_pre_xgb_0 = pd.Series(reg.predict(x_test_0)*y_std+y_mean)
     
-    #import xgboost as xgb
-    #dtrain = xgb.DMatrix(x_train, label=y_train,missing = 0)
-    #dtest = xgb.DMatrix(x_test)
-    #param = {'max_depth':4, 'eta':0.6,'objective':'binary:logistic','scale_pos_weights':0.25,'min_child_weight':1,'lambda':1}
-    #num_round = 60
-   # bst = xgb.train(param, dtrain, num_round)
-    #y_pre_xgb=pd.Series(bst.predict(dtest))
+    
    
 
    
