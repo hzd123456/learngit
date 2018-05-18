@@ -53,4 +53,4 @@ if __name__ == "__main__":
     # 程序入口
     pro_data_features.start_enter(path_train,path_test)
     #pro_data_features.start_enter('train.csv','test.csv')
-    #process()
+    #process()我爱你
